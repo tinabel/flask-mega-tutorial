@@ -2,9 +2,9 @@
 
 {% block content %}
   <h1>{% block title %}{{ title }}{% endblock %}</h1>
-  {% for post in posts %}
+  {% if posts is defined and posts|length > 0 %}
     {% include '_post_list.html' %}
-  {% endfor %}
+  {% endif %}
   {% if form %}
     {% include '_post_form.html' %}
     {% endif %}

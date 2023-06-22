@@ -1,11 +1,11 @@
 <ul class="posts-list--posts">
-  {% for post in posts.items %}
+  {% for post in posts %}
   <li class="posts-list__post">
     {% include '_post.html' %}
   </li>
   {% endfor %}
 </ul>
-{% if posts.total > posts.per_page %}
+{% if show_pagination %}
   <ul class="posts-list--pagination">
     {% if prev_url %}
       <li class="posts-list--pagination__prev">

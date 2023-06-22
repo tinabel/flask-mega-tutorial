@@ -152,11 +152,10 @@ class User(UserMixin, db.Model):
     #  list: The posts of the users that the user is following as well as the user's own posts.
 
     followed = Post.query.join(
-      followers, (followers.c.followed_id == Post.user_id)
-    ).filter(followers.c.follower_id == self.id)
+      followers, (followers.c.followed_id == Post.user_id)).filter(
+        followers.c.follower_id == self.id)
 
     own = Post.query.filter_by(user_id=self.id)
-
     return followed.union(own).order_by(Post.timestamp.desc())
 
   def get_reset_password_token(self, expires_in=600):
