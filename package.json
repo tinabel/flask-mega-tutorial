@@ -1,0 +1,22 @@
+{
+  "name": "tinabellvance",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "learning site for combining flask, react, sass",
+  "main": "index.js",
+  "author": "Tina Bell Vance",
+  "license": "MIT",
+  "dependencies": {
+    "nextjs": "^0.0.3",
+    "promisify": "^0.0.3",
+    "react": "^18.2.0",
+    "sass": "^1.63.5",
+    "yarn": "^1.22.19"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "devCompileSass": "sass --watch app/static/src/scss/main.scss app/static/dist/css/styles.css --style compressed --embed-sources",
+    "prodCompileSass": "sass app/static/src/scss/main.scss app/static/dist/css/styles.css --style compressed --no-source-map"
+  }
+}
