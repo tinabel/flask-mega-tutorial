@@ -1,0 +1,271 @@
+# Spanish translations for PROJECT.
+# Copyright (C) 2023 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2023-06-22 11:37-0400\n"
+"PO-Revision-Date: 2023-06-22 10:05-0400\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: app/forms.py:16 app/forms.py:39 app/forms.py:82
+msgid "Username"
+msgstr "Nombre de usuario"
+
+#: app/forms.py:17 app/forms.py:26 app/forms.py:41
+msgid "Password"
+msgstr "Contraseña"
+
+#: app/forms.py:18
+msgid "Remember Me"
+msgstr "Recuérdame"
+
+#: app/forms.py:19 app/routes.py:77 app/templates/base.html:29
+msgid "Sign In"
+msgstr "Ingresar"
+
+#: app/forms.py:22
+msgid "Email Address"
+msgstr "Correo electrónico"
+
+#: app/forms.py:23
+msgid "Request Password Reset"
+msgstr "Solicitud de restablecimiento de contraseña"
+
+#: app/forms.py:27
+msgid "Repeat Password"
+msgstr "Repetir contraseña"
+
+#: app/forms.py:28 app/routes.py:125
+msgid "Reset Password"
+msgstr "Restablecer contraseña"
+
+#: app/forms.py:40
+msgid "Email"
+msgstr "Correo electrónico"
+
+#: app/forms.py:42
+msgid "Password Confirmation"
+msgstr "Confirmación de contraseña"
+
+#: app/forms.py:43 app/routes.py:143 app/templates/register.html:4
+msgid "Register"
+msgstr "Registro"
+
+#: app/forms.py:57
+msgid "Please use a different user name."
+msgstr "Por favor utilice un nombre de usuario diferente."
+
+#: app/forms.py:71
+msgid "Please use a different email address."
+msgstr "Por favor, utilice una dirección de correo electrónico diferente."
+
+#: app/forms.py:83
+msgid "First Name"
+msgstr "Nombre"
+
+#: app/forms.py:84
+msgid "Middle Name"
+msgstr "Nombre medio"
+
+#: app/forms.py:85
+msgid "Last Name"
+msgstr "Apellido"
+
+#: app/forms.py:86
+msgid "About me"
+msgstr "Sobre mí"
+
+#: app/forms.py:87
+msgid "Save"
+msgstr "Guardar"
+
+#: app/forms.py:108
+msgid "Please use a different username."
+msgstr "Por favor utilice un nombre de usuario diferente."
+
+#: app/forms.py:122
+msgid "Say something"
+msgstr "Di algo"
+
+#: app/forms.py:123
+msgid "Post Title"
+msgstr "Título"
+
+#: app/forms.py:124
+msgid "Submit"
+msgstr "Guardar"
+
+#: app/routes.py:41
+msgid "Your post is now live!"
+msgstr "¡Tu puesto está ahora en vivo!"
+
+#: app/routes.py:47 app/templates/base.html:22
+msgid "Home"
+msgstr "Página principal"
+
+#: app/routes.py:66
+msgid "Invalid username or password"
+msgstr "Nombre de usuario o contraseña inválido"
+
+#: app/routes.py:101
+msgid "Check your email for the instructions to reset your password"
+msgstr ""
+"Compruebe su correo electrónico para las instrucciones para restablecer "
+"su contraseña"
+
+#: app/routes.py:103
+#, fuzzy
+msgid "Reset Password Request"
+msgstr "Solicitud de restablecimiento de contraseña"
+
+#: app/routes.py:123
+msgid "Your password has been reset."
+msgstr "Su contraseña ha sido restablecida."
+
+#: app/routes.py:140
+msgid "Congratulations, you are now a registered user!"
+msgstr "¡Felicidades, ahora eres un usuario registrado!"
+
+#: app/routes.py:170
+msgid "Your changes have been saved."
+msgstr "Tus cambios han sido salvados."
+
+#: app/routes.py:178
+#, fuzzy
+msgid "Edit Profile"
+msgstr "Perfil de edición"
+
+#: app/routes.py:195 app/routes.py:222
+#, python-format
+msgid "User %(username)s not found."
+msgstr "Usuario %(username)s no encontrados."
+
+#: app/routes.py:198
+msgid "You cannot follow yourself!"
+msgstr "¡No puedes seguirte!"
+
+#: app/routes.py:202
+#, python-format
+msgid "You are now following %(username)s!"
+msgstr "¡Ahora estás siguiendo %(username)s!"
+
+#: app/routes.py:225
+msgid "You cannot unfollow yourself!"
+msgstr "¡No puedes dejar de seguirte!"
+
+#: app/routes.py:229
+#, python-format
+msgid "You are no longer following %(username)s."
+msgstr "Ya no estás siguiendo %(username)s."
+
+#: app/routes.py:252 app/templates/base.html:25
+msgid "Explore"
+msgstr "Explorar"
+
+#: app/templates/404.html:6 app/templates/500.html:6
+msgid "homepage"
+msgstr "página principal"
+
+#: app/templates/404.html:9
+msgid "Oops! We can't find that page!"
+msgstr "¡Oh-oh! ¡No podemos encontrar esa página!"
+
+#: app/templates/404.html:10
+#, fuzzy, python-format
+msgid "Sorry about that. Try going back to the %(index)s instead?"
+msgstr "Lo siento. ¿Intenta volver a la %(index)s?"
+
+#: app/templates/500.html:9
+msgid "Aw shucks! Something unexpected happened!"
+msgstr "¡Aw! ¡Algo inesperado sucedió!"
+
+#: app/templates/500.html:10
+msgid "The site administrator has been notified. Sorry for the inconvenience."
+msgstr "Se ha notificado al administrador del sitio. Disculpen las molestias."
+
+#: app/templates/500.html:11
+#, python-format
+msgid "Try going back to the %(homepage)s instead?"
+msgstr "¿Intenta volver al %(homepage)s en su lugar?"
+
+#: app/templates/_post.html:5
+msgid "posted"
+msgstr "publicado"
+
+#: app/templates/_post_form.html:1
+msgid "Got something to say?"
+msgstr "¿Tienes algo que decir?"
+
+#: app/templates/base.html:32
+msgid "Register here!"
+msgstr "¡Regístrese aquí!"
+
+#: app/templates/base.html:36
+msgid "Your Profile"
+msgstr "Su perfil"
+
+#: app/templates/base.html:39
+msgid "Sign Out"
+msgstr "Sign Out"
+
+#: app/templates/edit_profile.html:4
+#, fuzzy
+msgid "Edit Your User Profile"
+msgstr "Su perfil"
+
+#: app/templates/login.html:27
+msgid "Forgot your password?"
+msgstr "¿Olvidó su contraseña?"
+
+#: app/templates/login.html:28
+msgid "Request a password reset"
+msgstr "Solicitar un reinicio de contraseña"
+
+#: app/templates/user.html:4
+#, python-format
+msgid "User: %(full_name)s"
+msgstr "Usuario: %(full_name)s"
+
+#: app/templates/user.html:7
+msgid "Edit profile"
+msgstr "Perfil de edición"
+
+#: app/templates/user.html:13
+#, python-format
+msgid "ID: %(id)s"
+msgstr "Identificación: %(id)s"
+
+#: app/templates/user.html:15
+#, python-format
+msgid "Username: %(username)s"
+msgstr "Nombre de usuario %(username)s"
+
+#: app/templates/user.html:16
+#, python-format
+msgid "Email: %(email)s"
+msgstr "Correo electrónico: %(email)s"
+
+#: app/templates/user.html:23
+#, python-format
+msgid "%(follower_count)s follower(s), %(following_count)s following"
+msgstr "%(follower_count)s seguidor(s), %(following_count)s siguientes"
+
+#: app/templates/user.html:50
+#, python-format
+msgid "Last seen on: %(last_seen)s"
+msgstr "El último visto en: %(last_seen)s"
+
+#~ msgid "Try going back to the %(homepage)s?"
+#~ msgstr "Lo siento. ¿Intente volver a la %(homepage)s?"
+
