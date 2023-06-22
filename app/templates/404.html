@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% set index_link %}
+    <a href="{{ url_for('index') }}">
+      {{ _('homepage') }}
+    </a>
+  {% endset %}
+  <h1>{{ _('Oops! We can\'t find that page!') }}</h1>
+  <p>{{ _('Sorry about that. Try going back to the %(index)s instead?', index=index_link) }}</p>
+{% endblock %}

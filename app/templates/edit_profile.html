@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>{% block title %}{{ _('Edit Your User Profile') }}{% endblock %}</h1>
+
+  <form action="" method="POST">
+    {{ form.hidden_tag() }}
+    <ul class="edit-profile--form-items">
+      <li class="edit-profile--form-item">
+        {{ form.username.label }}
+        {{ form.username(size=32) }}
+        {% for error in form.username.errors %}
+          <span class="error">[{{ error }}]</span>
+        {% endfor %}
+      </li>
+      <li class="edit-profile--form-item">
+        {{ form.first_name.label }}
+        {{ form.first_name(size=32) }}
+        {% for error in form.first_name.errors %}
+          <span class="error">[{{ error }}]</span>
+        {% endfor %}
+      </li>
+      <li class="edit-profile--form-item">
+        {{ form.middle_name.label }}
+        {{ form.middle_name(size=32) }}
+        {% for error in form.middle_name.errors %}
+          <span class="error">[{{ error }}]</span>
+        {% endfor %}
+      </li>
+      <li class="edit-profile--form-item">
+        {{ form.last_name.label }}
+        {{ form.last_name(size=32) }}
+        {% for error in form.last_name.errors %}
+          <span class="error">[{{ error }}]</span>
+        {% endfor %}
+      </li>
+      <li class="edit-profile--form-item">
+        {{ form.about_me.label }}
+        {{ form.about_me(cols=50, rows=4) }}
+        {% for error in form.about_me.errors %}
+          <span class="error">[{{ error }}]</span>
+        {% endfor %}
+        </li>
+      <li class="edit-profile--form-item">
+        {{ form.submit }}
+      </li>
+    </ul>
+  </form>
+{% endblock %}

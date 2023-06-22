@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block  content %}
+  <h1>{{ _('User: %(full_name)s', full_name=user.full_name()) }}</h1>
+  {% if user == current_user %}
+    <p class="user--edit-profile">
+      <a class="user--edit-profile__link" href="{{ url_for('edit_profile') }}">{{ _('Edit profile') }}</a>
+    </p>
+  {% endif %}
+  <ul class="user--details-list">
+    <li class="user--details-list__header">
+      <ul class="user--details-list__header-list">
+        <li class="user--details-list__header-list__id">{{ _('ID: %(id)s', id=user.id) }}</li>
+        <li class="user--details-list__header-list__avatar"><img src="{{ user.avatar(128) }}" alt="Avatar for {{ user.username }}"></li>
+        <li class="user--details-list__header-list__username">{{ _('Username: %(username)s', username=user.username) }}</li>
+        <li class="user--details-list__header-list__email">{{ _('Email: %(email)s', email=user.email) }}</li>
+      </ul>
+    </li>
+    <li class="user--details-list__followers">
+      <ul class="user--details-list__followers-list">
+        <li class="user--details-list__followers-list__counts">
+          {{
+            _('%(follower_count)s follower(s), %(following_count)s following',
+              follower_count=user.followers.count(),
+              following_count=user.followed.count()
+            )
+          }}
+        </li>
+        {% if user != current_user %}
+          <li class="user--details-list__followers-list__follow">
+            {% if not current_user.is_following(user) %}
+              <form action="{{ url_for('follow', username=user.username) }}" method="POST">
+                {{ form.hidden_tag() }}
+                {{ form.submit(value='Follow') }}
+              </form>
+            {% elif current_user.is_following(user) %}
+              <form action="{{ url_for('unfollow', username=user.username) }}" method="POST">
+                {{ form.hidden_tag() }}
+                {{ form.submit(value='Unfollow') }}
+              </form>
+            {% endif %}
+          </li>
+        {% endif %}
+      </ul>
+    </li>
+    {% if user.about_me %}
+      <li class="user--details-list__about">{{ user.about_me }}</li>
+    {% endif %}
+    {% if user.last_seen %}
+      <li class="user--details-list__last-seen">{{ _('Last seen on: %(last_seen)s', last_seen=moment(user.last_seen).format('LLL')) }}</li>
+    {% endif %}
+  </ul>
+
+  {% include '_post_list.html' %}
+{% endblock %}

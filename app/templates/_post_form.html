@@ -1,0 +1,23 @@
+<h2>{{ _('Got something to say?') }}</h2>
+<form action="" method="POST">
+  {{ form.hidden_tag() }}
+  <ul class="post-form--form-items">
+    <li class="post-form--form-item">
+      {{ form.title.label }}
+      {{ form.title(**{"class": "post-form--title-field"}) }}
+      {% for error in form.title.errors %}
+        <span class="error">[{{ error }}]</span>
+      {% endfor %}
+    </li>
+    <li class="post-form--form-item">
+      {{ form.post.label }}
+      {{ form.post(**{"class": "post-form--body-field"}) }}
+      {% for error in form.post.errors %}
+        <span class="error">[{{ error }}]</span>
+      {% endfor %}
+    </li>
+    <li>
+      {{ form.submit(**{"class": "post-form--submit"}) }}
+    </li>
+  </ul>
+</form>

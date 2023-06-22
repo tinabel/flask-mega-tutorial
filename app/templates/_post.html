@@ -1,0 +1,10 @@
+<ul class="post">
+  <li class="post--metadata">
+    <h3 class="post--metadata__title">{{ post.title }}</h3>
+    <span class="post--metatadata__author"><img class="post--avatar__img" src="{{ current_user.avatar(32) }}" alt="Avatar for {{ current_user.username }}"> {{ post.author.full_name() }}</span>
+    <span class="post--metatadata__timestamp">{{ _('posted') }} {{ moment(post.timestamp).fromNow() }}</span>
+  </li>
+  <li class="post--body">
+    {{ post.body }}
+  </li>
+</ul>

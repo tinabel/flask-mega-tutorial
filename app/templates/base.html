@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      {% block title %}
+        {% if title %}
+          {{title}} &mdash; Tina Bell Vance
+        {% else %}
+          Tina Bell Vance
+        {% endif %}
+      {% endblock %}
+    </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>
+          <a href="{{ url_for('index')}}">{{ _('Home') }}</a>
+        </li>
+        <li>
+          <a href="{{ url_for('explore')}}">{{ _('Explore') }}</a>
+        </li>
+        {% if current_user.is_anonymous %}
+          <li>
+            <a href="{{ url_for('login')}}">{{ _('Sign In') }}</a>
+          </li>
+          <li>
+            New User? <a href="{{ url_for('register') }}">{{ _('Register here!') }}</a>
+          </li>
+        {% else %}
+          <li>
+            <a href="{{ url_for('user', username=current_user.username) }}">{{ _('Your Profile') }}</a>
+          </li>
+          <li>
+            <a href="{{ url_for('logout')}}">{{ _('Sign Out') }}</a>
+          </li>
+        {% endif %}
+      </ul>
+    </nav>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+    {% block scripts %}
+      {{ moment.include_moment() }}
+    {% endblock %}
+  </body>
+</html>

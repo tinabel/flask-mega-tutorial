@@ -1,0 +1,21 @@
+<ul class="posts-list--posts">
+  {% for post in posts.items %}
+  <li class="posts-list__post">
+    {% include '_post.html' %}
+  </li>
+  {% endfor %}
+</ul>
+{% if posts.total > posts.per_page %}
+  <ul class="posts-list--pagination">
+    {% if prev_url %}
+      <li class="posts-list--pagination__prev">
+        <a href="{{ prev_url }}">Newer posts</a>
+      </li>
+    {% endif %}
+    {% if next_url %}
+      <li class="posts-list--pagination__next">
+        <a href="{{ next_url }}">Older posts</a>
+      </li>
+    {% endif %}
+  </ul>
+{% endif %}

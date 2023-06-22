@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>{% block title %}{{ form.title }}{% endblock %}</h1>
+  <form action="" class="login--form" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <ul class="login--fields-list">
+      <li class="login--field-list-item">
+        {{ form.username.label }}
+        {{ form.username(size=32) }}
+        {% for error in form.username.errors %}
+          <span class="error">[{{ error }}]</span>
+        {% endfor %}
+      </li>
+      <li class="login--field-list-item">
+        {{ form.password.label }}
+        {{ form.password(size=32) }}
+        {% for error in form.password.errors %}
+          <span class="error">[{{ error }}]</span>
+        {% endfor %}
+      </li>
+      <li class="login--field-list-item">
+        {{ form.remember_me() }}
+        {{ form.remember_me.label }}
+      </li>
+      <li class="login--field-list-item">
+        {{ _('Forgot your password?') }}
+        <a href="{{ url_for('reset_password_request')}}">{{ _('Request a password reset') }}</a>
+      </li>
+      <li class="login--field-list-item">
+        {{ form.submit() }}
+      </li>
+    </ul>
+  </form>
+{% endblock %}

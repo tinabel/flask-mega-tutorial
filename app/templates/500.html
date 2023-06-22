@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% set index_link %}
+    <a href="{{ url_for('index') }}">
+      {{ _('homepage') }}
+    </a>
+  {% endset %}
+  <h1>{% block title %}{{ _('Aw shucks! Something unexpected happened!') }}{% endblock %}</h1>
+  <p>{{ _('The site administrator has been notified. Sorry for the inconvenience.') }}</p>
+  <p>{{ _('Try going back to the %(homepage)s instead?', homepage=index_link) }}</p>
+{% endblock %}
