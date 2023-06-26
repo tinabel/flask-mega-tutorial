@@ -21,3 +21,5 @@ class Config(object):
   ADMIN = os.environ.get('SITE_ADMIN')
 
   POSTS_PER_PAGE = 25
+
+  MS_TRANSLATOR_KEY = os.environ.get('MS_TRANSLATOR_KEY')
