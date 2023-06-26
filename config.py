@@ -12,12 +12,12 @@ class Config(object):
 
   LANGUAGES = ['en', 'es']
 
-  MAIL_SERVER='smtp.sendgrid.net'
-  MAIL_PORT=587
-  MAIL_USE_TLS=1
-  MAIL_USERNAME='apikey'
-  MAIL_PASSWORD=os.environ.get('SENDGRID_API_KEY')
-  MAIL_DEFAULT_SENDER=os.environ.get('MAIL_DEFAULT_SENDER')
-  ADMINS=['tina@bellvance.com']
+  MAIL_SERVER = os.environ.get('MAIL_SERVER')
+  MAIL_PORT = os.environ.get('MAIL_PORT')
+  MAIL_USE_TLS = os.environ.get('MAIL_USE_TLS')
+  MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
+  MAIL_PASSWORD = os.environ.get('SENDGRID_API_KEY')
+  MAIL_DEFAULT_SENDER = os.environ.get('MAIL_DEFAULT_SENDER')
+  ADMIN = os.environ.get('SITE_ADMIN')
 
   POSTS_PER_PAGE = 25
