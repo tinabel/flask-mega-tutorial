@@ -33,7 +33,7 @@ if not app.debug:
     mail_handler = SMTPHandler(
       mailhost=(app.config['MAIL_SERVER'], app.config['MAIL_PORT']),
       fromaddr= app.config['MAIL_DEFAULT_SENDER'],
-      toaddrs=app.config['ADMINS'], subject='Bell Vance Failure',
+      toaddrs=app.config['ADMIN'], subject='Bell Vance Failure',
       credentials=auth, secure=secure
     )
   mail_handler.setLevel(logging.ERROR)
