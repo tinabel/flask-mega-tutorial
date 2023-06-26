@@ -1,6 +1,6 @@
 from datetime import datetime
-from flask import render_template, flash, redirect, request, url_for
-from flask_babel import _
+from flask import render_template, flash, g, json, jsonify, redirect, request, url_for
+from flask_babel import _, get_locale
 from flask_login import current_user, login_required, login_user, logout_user
 from langdetect import detect, LangDetectException
 from werkzeug.urls import url_parse
@@ -9,6 +9,7 @@ from app import app, db
 from app.email import send_password_reset_email
 from app.forms import EditProfileForm, EmptyForm, LoginForm, PostForm, RegistrationForm, ResetPasswordForm, ResetPasswordRequestForm
 from app.models import User, Post
+from app.translate import translate
 
 @app.before_request
 def before_request():
@@ -21,6 +22,7 @@ def before_request():
   #   None
 
   if current_user.is_authenticated:
+    g.locale = str(get_locale())
     current_user.last_seen = datetime.utcnow()
     db.session.commit()
 
@@ -254,3 +256,20 @@ def explore():
   prev_url = url_for('explore', page=posts.prev_num) if posts.has_prev else None
 
   return render_template('index.html', title=_('Explore'), posts=posts.items, show_pagination=show_pagination, next_url=next_url, prev_url=prev_url)
+
+@app.route('/translate', methods=['POST'])
+@login_required
+def translate_text():
+  # Translates text.
+  #
+  # Parameters:
+  #   None
+  #
+  # Returns:
+  #   str: The translated text.
+  # translated_text = {'text': translate(request.form['text'], request.form['source_language'], request.form['dest_language'])}
+  return jsonify(
+    {
+      'text': translate(request.json.get('text', False), request.json.get('source_language', False), request.json.get('dest_language', False))
+    }
+  )
