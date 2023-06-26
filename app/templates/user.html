@@ -4,7 +4,7 @@
   <h1>{{ _('User: %(full_name)s', full_name=user.full_name()) }}</h1>
   {% if user == current_user %}
     <p class="user--edit-profile">
-      <a class="user--edit-profile__link" href="{{ url_for('edit_profile') }}">{{ _('Edit profile') }}</a>
+      <a class="user--edit-profile__link" href="{{ url_for('main.edit_profile') }}">{{ _('Edit profile') }}</a>
     </p>
   {% endif %}
   <ul class="user--details-list">
@@ -29,12 +29,12 @@
         {% if user != current_user %}
           <li class="user--details-list__followers-list__follow">
             {% if not current_user.is_following(user) %}
-              <form action="{{ url_for('follow', username=user.username) }}" method="POST">
+              <form action="{{ url_for('main.follow', username=user.username) }}" method="POST">
                 {{ form.hidden_tag() }}
                 {{ form.submit(value='Follow') }}
               </form>
             {% elif current_user.is_following(user) %}
-              <form action="{{ url_for('unfollow', username=user.username) }}" method="POST">
+              <form action="{{ url_for('main.unfollow', username=user.username) }}" method="POST">
                 {{ form.hidden_tag() }}
                 {{ form.submit(value='Unfollow') }}
               </form>

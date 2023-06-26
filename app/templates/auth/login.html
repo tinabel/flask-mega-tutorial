@@ -25,7 +25,7 @@
       </li>
       <li class="login--field-list-item">
         {{ _('Forgot your password?') }}
-        <a href="{{ url_for('reset_password_request')}}">{{ _('Request a password reset') }}</a>
+        <a href="{{ url_for('auth.reset_password_request')}}">{{ _('Request a password reset') }}</a>
       </li>
       <li class="login--field-list-item">
         {{ form.submit() }}
