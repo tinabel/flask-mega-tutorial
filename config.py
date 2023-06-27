@@ -12,6 +12,7 @@ class Config(object):
     'sqlite:///' + os.path.join(basedir, 'test.db')
   SQLALCHEMY_TRACK_MODIFICATIONS = os.environ.get('SQLALCHEMY_TRACK_MODIFICATIONS') or \
     False
+  OPENSEARCH_URL = os.environ.get('OPENSEARCH_URL')
 
   LANGUAGES = ['en', 'es']
 

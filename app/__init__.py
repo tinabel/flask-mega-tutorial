@@ -2,6 +2,7 @@ import logging
 from logging.handlers import RotatingFileHandler, SMTPHandler
 import os
 from config import Config
+from opensearchpy import OpenSearch
 from flask import Flask, request, current_app
 from flask_babel import Babel, lazy_gettext as _l
 from flask_login import LoginManager
@@ -33,7 +34,7 @@ def create_app(config_class=Config):
   #   This function is called by the Flask CLI.
 
   app = Flask(__name__, static_folder='static/dist', static_url_path='')
-  app.config.from_object(Config)
+  app.config.from_object(config_class)
 
   db.init_app(app)
   migrate.init_app(app, db)
@@ -41,6 +42,7 @@ def create_app(config_class=Config):
   mail.init_app(app)
   moment.init_app(app)
   babel.init_app(app)
+  app.opensearch = OpenSearch([app.config['OPENSEARCH_URL']]) if app.config['OPENSEARCH_URL'] else None
 
   from app.errors import bp as errors_bp
   app.register_blueprint(errors_bp)
