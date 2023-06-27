@@ -59,6 +59,14 @@ class PostForm(FlaskForm):
   submit = SubmitField(_l('Submit'))
 
 class SearchForm(FlaskForm):
+  # Returns a form to search the site.
+  #
+  # Parameters:
+  #   FlaskForm: The FlaskForm class.
+  #
+  # Returns:
+  #   SearchForm: The search form.
+
   q = StringField(_l('Search'), validators=[DataRequired()])
 
   def __init__(self, *args, **kwargs):
